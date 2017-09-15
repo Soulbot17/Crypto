@@ -1,8 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Cryptograph extends JFrame{
-    private final String TITLE = "Cryptograph v0.69";
+class Cryptograph extends JFrame{
     private static JTextArea textArea1 = new JTextArea(300,200);
     private JScrollPane paneTextArea1 = new JScrollPane(textArea1);
     private static JTextArea textArea2 = new JTextArea(300,200);
@@ -11,16 +10,16 @@ public class Cryptograph extends JFrame{
     private MyMenuBar myMenuBar = MyMenuBar.getInstance();
     private JPanel jCenterPanel = new JPanel();
 
-    public static void setTextArea2Text(String text) {
+    static void setTextArea2Text(String text) {
         textArea2.setText(text);
     }
 
-    public static JTextArea getTextArea() {
+    static JTextArea getTextArea() {
         return textArea1;
     }
 
     private void prepareFrame() {
-        setTitle(TITLE);
+        setTitle("Cryptograph v0.69");
         setSize(600,400);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -41,7 +40,7 @@ public class Cryptograph extends JFrame{
         getContentPane().add(myMenuBar, BorderLayout.NORTH);
     }
 
-    public void showFrame() {
+    void showFrame() {
         prepareFrame();
         setVisible(true);
     }

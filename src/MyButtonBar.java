@@ -7,7 +7,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
-public class MyButtonBar extends JPanel{
+class MyButtonBar extends JPanel{
     private final String BUTT_ENCRYPT = " ENCRYPT ";
     private final String BUTT_DECRYPT = " DECRYPT ";
     private static MyButtonBar instance;
@@ -18,7 +18,7 @@ public class MyButtonBar extends JPanel{
     private LineBorder border = new LineBorder(Color.BLACK,1,false);
     private JLabel mainLabel = new JLabel("         Номер один по борьбе секретными службами по всему миру!");
 
-    public MyButtonBar() {
+    private MyButtonBar() {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         buttonEncrypt.setBorder(border);
         buttonEncrypt.addActionListener(new EncryptListener());
@@ -29,7 +29,7 @@ public class MyButtonBar extends JPanel{
         add(mainLabel);
     }
 
-    public static MyButtonBar getInstance() {
+    static MyButtonBar getInstance() {
         if (instance==null) {
             return new MyButtonBar();
         } else return instance;
