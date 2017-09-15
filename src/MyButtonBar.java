@@ -68,6 +68,9 @@ class MyButtonBar extends JPanel{
             if (Cryptograph.getTextArea().getText()==null) return;
             char[] cryptoSet = Cryptograph.getTextArea().getText().toCharArray();
             for (int i = 0; i<cryptoSet.length;i++) {
+                if ((char)(cryptoSet[i]-code)=='\u001D') {
+                    cryptoSet[i]='\n'; continue;
+                }
                 cryptoSet[i] = (char)(cryptoSet[i]-code);
             }
             StringBuilder sb = new StringBuilder();
