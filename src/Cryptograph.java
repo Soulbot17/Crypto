@@ -9,6 +9,8 @@ class Cryptograph extends JFrame{
     private MyButtonBar myButtonBar = MyButtonBar.getInstance();
     private MyMenuBar myMenuBar = MyMenuBar.getInstance();
     private JPanel jCenterPanel = new JPanel();
+    private Font font = new Font(Font.SANS_SERIF,Font.PLAIN,16);
+    private JPanel emptyPanel = new JPanel();
 
     static void setTextArea2Text(String text) {
         textArea2.setText(text);
@@ -28,13 +30,16 @@ class Cryptograph extends JFrame{
         jCenterPanel.setLayout(new BoxLayout(jCenterPanel, BoxLayout.Y_AXIS));
 
         textArea1.setLineWrap(true);
+        textArea1.setFont(font);
         textArea2.setEditable(false);
+        textArea2.setFont(font);
         textArea2.setLineWrap(true);
         paneTextArea1.setAutoscrolls(true);
         paneTextArea2.setAutoscrolls(true);
         jCenterPanel.add(paneTextArea1);
         jCenterPanel.add(paneTextArea2);
 
+        getContentPane().add(emptyPanel,BorderLayout.WEST);
         getContentPane().add(jCenterPanel,BorderLayout.CENTER);
         getContentPane().add(myButtonBar,BorderLayout.SOUTH);
         getContentPane().add(myMenuBar, BorderLayout.NORTH);
