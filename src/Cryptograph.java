@@ -19,8 +19,8 @@ class Cryptograph extends JFrame{
     }
 
     private void prepareFrame() {
-        setTitle("Cryptograph v0.69");
-        setSize(600,400);
+        setTitle("ССШСКГБСССР v0.69");
+        setSize(800,500);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

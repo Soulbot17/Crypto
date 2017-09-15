@@ -8,8 +8,8 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 class MyButtonBar extends JPanel{
-    private final String BUTT_ENCRYPT = " ENCRYPT ";
-    private final String BUTT_DECRYPT = " DECRYPT ";
+    private final String BUTT_ENCRYPT = " ЗАЩИФРОВАТЬ ";
+    private final String BUTT_DECRYPT = " РАСШИФРОВАТЬ ";
     private static MyButtonBar instance;
 
     private JButton buttonEncrypt = new JButton(BUTT_ENCRYPT);
@@ -19,11 +19,14 @@ class MyButtonBar extends JPanel{
     private JLabel mainLabel = new JLabel("         Номер один по борьбе секретными службами по всему миру!");
 
     private MyButtonBar() {
+        Font font = new Font(Font.MONOSPACED,Font.BOLD,16);
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         buttonEncrypt.setBorder(border);
         buttonEncrypt.addActionListener(new EncryptListener());
+        buttonEncrypt.setFont(font);
         buttonDecrypt.setBorder(border);
         buttonDecrypt.addActionListener(new DecryptListener());
+        buttonDecrypt.setFont(font);
         add(buttonEncrypt);
         add(buttonDecrypt);
         add(mainLabel);
