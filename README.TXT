@@ -1,0 +1,1 @@
+Cryptograph v0.69 is a joke. Everything is a joke. Live with it.
